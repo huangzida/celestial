@@ -1,12 +1,13 @@
 {
-  "name": "@bg-effects/star-trails-gl",
-  "version": "1.0.0",
+  "name": "@bg-effects/celestial",
+  "version": "1.0.2",
   "type": "module",
   "packageManager": "pnpm@10.25.0",
-  "description": "Star Trails GL Effect - A high-performance star trails background effect built with OGL and Vue.",
+  "description": "Celestial Effect - A high-performance star trails background effect built with OGL and Vue.",
   "author": "huangzida",
   "license": "MIT",
   "keywords": [
+    "celestial",
     "star-trails",
     "webgl",
     "ogl",
@@ -14,13 +15,13 @@
     "background-effect",
     "animation"
   ],
-  "homepage": "https://github.com/huangzida/star-trails-gl#readme",
+  "homepage": "https://github.com/huangzida/celestial#readme",
   "bugs": {
-    "url": "https://github.com/huangzida/star-trails-gl/issues"
+    "url": "https://github.com/huangzida/celestial/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huangzida/star-trails-gl.git"
+    "url": "git+https://github.com/huangzida/celestial.git"
   },
   "sideEffects": [
     "**/*.css"

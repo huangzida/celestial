@@ -1,0 +1,29 @@
+{
+  "tabs": {
+    "mode": "Mode",
+    "appearance": "Appearance",
+    "environment": "Environment"
+  },
+  "labels": {
+    "mode": "Mode",
+    "speed": "Cycle Speed",
+    "auto_cycle": "Natural Cycle",
+    "radius": "Orbit Radius",
+    "horizon": "Horizon Height",
+    "size": "Body Size",
+    "bloom": "Bloom",
+    "moon_phase": "Moon Phase",
+    "moon_glow": "Moon Glow",
+    "stars": "Stars",
+    "sea": "Sea Reflection",
+    "interactive": "Interactive",
+    "reset": "Reset"
+  },
+  "modes": {
+    "auto": "Auto Cycle",
+    "sun": "Eternal Sun",
+    "moon": "Silent Night",
+    "solar_eclipse": "Solar Eclipse",
+    "lunar_eclipse": "Lunar Eclipse"
+  }
+}

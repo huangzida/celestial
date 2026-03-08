@@ -1,0 +1,29 @@
+{
+  "tabs": {
+    "mode": "模式",
+    "appearance": "外观",
+    "environment": "环境"
+  },
+  "labels": {
+    "mode": "运行模式",
+    "speed": "演替速度",
+    "auto_cycle": "自然演替",
+    "radius": "运行半径",
+    "horizon": "海平面高度",
+    "size": "天体大小",
+    "bloom": "光晕强度",
+    "moon_phase": "月相调节",
+    "moon_glow": "月光颜色",
+    "stars": "星星密度",
+    "sea": "海面反射",
+    "interactive": "鼠标交互",
+    "reset": "重置"
+  },
+  "modes": {
+    "auto": "自动循环",
+    "sun": "永恒之日",
+    "moon": "静谧之夜",
+    "solar_eclipse": "日全食",
+    "lunar_eclipse": "月全食"
+  }
+}

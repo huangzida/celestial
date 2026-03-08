@@ -1,24 +1,26 @@
-# @bg-effects/fireworks
+# @bg-effects/celestial
 
 [English](./README.md) | [简体中文](./README_CN.md)
 
-A high-performance fireworks background effect built with OGL and Vue.
+Celestial cycle background effect with day/night transitions, sun, moon, and eclipses.
 
-[Live Demo](https://huangzida.github.io/fireworks/)
+[Live Demo](https://huangzida.github.io/celestial/)
 
 ---
 
 ### Features
 
 - 🚀 **High Performance**: Built with OGL (a lightweight WebGL library) for smooth rendering.
-- 🎨 **Highly Customizable**: Multiple shapes (heart, star, butterfly, etc.), launch modes, and color options.
+- ☀️ **Day/Night Cycle**: Realistic solar and lunar cycles with transitions.
+- 🌙 **Special Events**: Support for solar and lunar eclipses, plus moon phases.
+- 🌊 **Sea Reflection**: Atmospheric sea reflections and horizon effects.
 - 🛠️ **Debug Mode**: Built-in visual debug panel for real-time adjustments.
 - 📦 **Ready to Use**: Easy-to-use Vue component with simple configuration.
 
 ### Installation
 
 ```bash
-pnpm add @bg-effects/fireworks ogl
+pnpm add @bg-effects/celestial ogl
 ```
 
 > **Note**: `ogl` is a peer dependency and needs to be installed manually.
@@ -27,15 +29,15 @@ pnpm add @bg-effects/fireworks ogl
 
 ```vue
 <script setup>
-import { Fireworks } from '@bg-effects/fireworks'
+import { Celestial } from '@bg-effects/celestial'
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Fireworks 
-      :firework-count="50"
-      shape="heart"
-      color-mode="multi"
+    <Celestial 
+      :time-speed="1.0"
+      cycle-mode="auto"
+      :sea-enabled="true"
     />
   </div>
 </template>
@@ -45,21 +47,22 @@ import { Fireworks } from '@bg-effects/fireworks'
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `firework-count` | `number` | `30` | Number of fireworks |
-| `speed` | `number` | `1.0` | Animation speed |
-| `size` | `number` | `2.0` | Particle size |
-| `shape` | `string` | `'normal'` | Firework shape (see below) |
-| `launch-mode` | `string` | `'random'` | Launch mode (see below) |
-| `color-mode` | `string` | `'multi'` | Color mode (`'single'` or `'multi'`) |
-| `color` | `string` | `'#ff0000'` | Color when color mode is `'single'` |
+| `timeSpeed` | `number` | `1.0` | Cycle animation speed |
+| `cycleMode` | `'auto' \| 'sun' \| 'moon' \| 'solar_eclipse' \| 'lunar_eclipse'` | `'auto'` | Display mode |
+| `autoCycle` | `boolean` | `true` | Enable automatic day/night cycle |
+| `objectSize` | `number` | `1.0` | Size of sun/moon |
+| `orbitRadius` | `number` | `1.0` | Orbit radius |
+| `horizonHeight` | `number` | `0.3` | Height of the horizon |
+| `starIntensity` | `number` | `1.0` | Intensity of stars |
+| `seaEnabled` | `boolean` | `true` | Enable sea reflection |
+| `bloomIntensity` | `number` | `1.0` | Bloom effect intensity |
+| `moonPhase` | `number` | `0.0` | Moon phase (-1.0 to 1.0) |
+| `moonGlowColor` | `string` | `'#ffffff'` | Color of moon glow |
+| `coronaStyle` | `'sharp' \| 'organic'` | `'organic'` | Style of solar corona |
+| `interactive` | `boolean` | `true` | Enable mouse interaction |
+| `cloudOpacity` | `number` | `0.5` | Cloud opacity |
 | `debug` | `boolean` | `false` | Enable debug panel |
 | `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | UI language |
-
-#### Supported Shapes (`shape`)
-`normal`, `circular`, `heart`, `star`, `butterfly`, `spiral`, `ring`, `doubleRing`, `atom`, `trefoil`, `clover`, `cross`, `saturn`, `hexagram`, `astroid`, `gear`, `fermat`, `folium`, `random`
-
-#### Launch Modes (`launchMode`)
-`random`, `burst`, `wave`, `tide`, `simultaneous`, `pendulum`
 
 ### Local Development
 

@@ -1,24 +1,26 @@
-# @bg-effects/fireworks
+# @bg-effects/celestial
 
 [English](./README.md) | [简体中文](./README_CN.md)
 
-基于 OGL 和 Vue 构建的高性能烟花背景特效。
+具有昼夜交替、太阳、月亮和食现象的星空背景特效。
 
-[在线演示](https://huangzida.github.io/fireworks/)
+[在线演示](https://huangzida.github.io/celestial/)
 
 ---
 
 ### 特性
 
 - 🚀 **高性能**: 基于 OGL (轻量级 WebGL 库) 构建，运行流畅。
-- 🎨 **高度可定制**: 提供多种形状（心形、星形、蝴蝶等）、发射模式和颜色选项。
+- ☀️ **昼夜交替**: 逼真的太阳和月亮运行周期及过渡效果。
+- 🌙 **特殊事件**: 支持日食、月食以及月相变化。
+- 🌊 **海面反射**: 大气感十足的海面反射和地平线效果。
 - 🛠️ **调试模式**: 内置可视化调试面板，方便实时调整效果。
 - 📦 **开箱即用**: 作为 Vue 组件，简单配置即可使用。
 
 ### 安装
 
 ```bash
-pnpm add @bg-effects/fireworks ogl
+pnpm add @bg-effects/celestial ogl
 ```
 
 > **注意**: `ogl` 是 peer dependency，需要手动安装。
@@ -27,15 +29,15 @@ pnpm add @bg-effects/fireworks ogl
 
 ```vue
 <script setup>
-import { Fireworks } from '@bg-effects/fireworks'
+import { Celestial } from '@bg-effects/celestial'
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Fireworks 
-      :firework-count="50"
-      shape="heart"
-      color-mode="multi"
+    <Celestial 
+      :time-speed="1.0"
+      cycle-mode="auto"
+      :sea-enabled="true"
     />
   </div>
 </template>
@@ -45,21 +47,22 @@ import { Fireworks } from '@bg-effects/fireworks'
 
 | 属性名 | 类型 | 默认值 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `firework-count` | `number` | `30` | 烟花数量 |
-| `speed` | `number` | `1.0` | 动画速度 |
-| `size` | `number` | `2.0` | 烟花粒子大小 |
-| `shape` | `string` | `'normal'` | 烟花形状（见下文） |
-| `launch-mode` | `string` | `'random'` | 发射模式（见下文） |
-| `color-mode` | `string` | `'multi'` | 颜色模式 (`'single'` 或 `'multi'`) |
-| `color` | `string` | `'#ff0000'` | 当颜色模式为 `'single'` 时的颜色 |
+| `timeSpeed` | `number` | `1.0` | 周期动画速度 |
+| `cycleMode` | `'auto' \| 'sun' \| 'moon' \| 'solar_eclipse' \| 'lunar_eclipse'` | `'auto'` | 显示模式 |
+| `autoCycle` | `boolean` | `true` | 是否开启自动昼夜循环 |
+| `objectSize` | `number` | `1.0` | 太阳/月亮大小 |
+| `orbitRadius` | `number` | `1.0` | 轨道半径 |
+| `horizonHeight` | `number` | `0.3` | 地平线高度 |
+| `starIntensity` | `number` | `1.0` | 星光强度 |
+| `seaEnabled` | `boolean` | `true` | 是否开启海面反射 |
+| `bloomIntensity` | `number` | `1.0` | 辉光强度 |
+| `moonPhase` | `number` | `0.0` | 月相 (-1.0 到 1.0) |
+| `moonGlowColor` | `string` | `'#ffffff'` | 月晕颜色 |
+| `coronaStyle` | `'sharp' \| 'organic'` | `'organic'` | 日冕样式 |
+| `interactive` | `boolean` | `true` | 是否开启鼠标交互 |
+| `cloudOpacity` | `number` | `0.5` | 云层透明度 |
 | `debug` | `boolean` | `false` | 是否开启调试面板 |
 | `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | 界面语言 |
-
-#### 支持的形状 (`shape`)
-`normal`, `circular`, `heart`, `star`, `butterfly`, `spiral`, `ring`, `doubleRing`, `atom`, `trefoil`, `clover`, `cross`, `saturn`, `hexagram`, `astroid`, `gear`, `fermat`, `folium`, `random`
-
-#### 发射模式 (`launchMode`)
-`random`, `burst`, `wave`, `tide`, `simultaneous`, `pendulum`
 
 ### 本地开发
 
